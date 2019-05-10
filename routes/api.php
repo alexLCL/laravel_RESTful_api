@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,27 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//登录
+Route::post('login','Auth\LoginController@login');
+
+//退出
+Route::get('logout','Auth\LoginController@logout');
+
+//注册
+Route::post('register','Auth\RegisterController@register');
+
+//获取文章列表
+Route::get('articles','ArticleController@index');
+
+//根据id查看文章详情
+Route::get('articles/{article}','ArticleController@show');
+
+//创建文章
+Route::post('articles','ArticleController@store');
+
+//更新文章
+Route::put('articles/{article}','ArticleController@update');
+
+//删除文章
+Route::delete('articles/{article}','ArticleController@delete');
