@@ -1135,7 +1135,7 @@ module.exports = (function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(12);
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 
 /***/ }),
@@ -1159,7 +1159,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_Home_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Register_vue__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Register_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_Register_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Login_vue__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Login_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Login_vue__);
 
 
@@ -1197,10 +1197,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 });
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.router = router;
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__webpack_require__(48), {
-    auth: __webpack_require__(52),
-    http: __webpack_require__(53),
-    router: __webpack_require__(54)
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__webpack_require__(49), {
+    auth: __webpack_require__(53),
+    http: __webpack_require__(54),
+    router: __webpack_require__(55)
 });
 
 __WEBPACK_IMPORTED_MODULE_4__App_vue___default.a.router = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.router;
@@ -17250,9 +17250,9 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(45)
 /* template */
-var __vue_template__ = __webpack_require__(45)
+var __vue_template__ = __webpack_require__(46)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17292,6 +17292,73 @@ module.exports = Component.exports
 
 /***/ }),
 /* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            name: '',
+            email: '',
+            password: '',
+            error: false,
+            errors: {},
+            success: false
+        };
+    },
+
+    methods: {
+        register: function register() {
+            var app = this;
+            this.$auth.register({
+                params: {
+                    name: app.name,
+                    email: app.email,
+                    password: app.password
+                },
+                success: function success() {
+                    app.success = true;
+                },
+                error: function error(resp) {
+                    app.error = true;
+                    app.errors = resp.response.data.errors;
+                },
+                redirect: null
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17479,7 +17546,7 @@ if (false) {
 }
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -17487,7 +17554,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(47)
+var __vue_template__ = __webpack_require__(48)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17526,7 +17593,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17629,10 +17696,10 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Auth = __webpack_require__(49)();
+var Auth = __webpack_require__(50)();
 
 module.exports = (function () {
 
@@ -17673,11 +17740,11 @@ module.exports = (function () {
 })();
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __utils  = __webpack_require__(50),
-    __token  = __webpack_require__(51),
+var __utils  = __webpack_require__(51),
+    __token  = __webpack_require__(52),
     __cookie = __webpack_require__(10)
 
 module.exports = function () {
@@ -18387,7 +18454,7 @@ module.exports = function () {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = (function (){
@@ -18469,7 +18536,7 @@ module.exports = (function (){
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __cookie = __webpack_require__(10);
@@ -18549,7 +18616,7 @@ module.exports = (function () {
 })();
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -18571,7 +18638,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -18637,7 +18704,7 @@ module.exports = {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -18705,7 +18772,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

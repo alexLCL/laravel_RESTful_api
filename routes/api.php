@@ -45,3 +45,5 @@ Route::group(['middleware'=>'auth:api'],function (){
 //删除文章
     Route::delete('articles/{article}','ArticleController@delete');
 });
+
+Route::post('auth/register','AuthController@register');
